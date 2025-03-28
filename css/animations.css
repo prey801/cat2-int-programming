@@ -1,0 +1,478 @@
+/* Profile Image Animation */
+.profile-hero {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 5rem 0;
+    overflow: hidden;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.profile-image-wrapper {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    transform: perspective(1000px) rotateY(0deg);
+    transition: all 0.5s ease;
+    filter: grayscale(20%);
+}
+
+.profile-img:hover {
+    filter: grayscale(0%);
+    transform: perspective(1000px) rotateY(-10deg);
+}
+
+.profile-circle {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    top: -5%;
+    left: -5%;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #3498db, #e74c3c);
+    z-index: 1;
+    animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Profile Tech Icons with Custom Positioning */
+.profile-tech-icons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Keeps icons behind the profile image */
+}
+
+.profile-tech-icons i {
+    position: absolute;
+    font-size: 2.2rem;
+    color: white;
+    background: var(--primary-color);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: float 6s ease-in-out infinite;
+    transition: all 0.3s ease;
+    border: 3px solid white;
+    z-index: -2; /* Ensures icons stay behind */
+}
+
+/* Brand colors for each icon */
+.profile-tech-icons i.fa-html5 { background: #e34f26; }
+.profile-tech-icons i.fa-css3-alt { background: #264de4; }
+.profile-tech-icons i.fa-js { background: #f7df1e; color: #333; }
+.profile-tech-icons i.fa-python { background: #3776ab; }
+
+/* Your exact positioning with enhanced visibility */
+.profile-tech-icons i:nth-child(1) { /* Top */
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 0s;
+}
+
+.profile-tech-icons i:nth-child(2) { /* Right */
+    top: 50%;
+    right: -60px;
+    transform: translateY(-50%);
+    animation-delay: 1.5s;
+}
+
+.profile-tech-icons i:nth-child(3) { /* Bottom */
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 3s;
+}
+
+.profile-tech-icons i:nth-child(4) { /* Left */
+    top: 50%;
+    left: -60px;
+    transform: translateY(-50%);
+    animation-delay: 4.5s;
+}
+
+/* Enhanced float animation */
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0) translateX(0);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    50% { 
+        transform: translateY(-15px) translateX(3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+}
+* Hover effects */
+.profile-tech-icons i:hover {
+    transform: scale(1.2) !important;
+    z-index: 4;
+    animation-play-state: paused;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Pulse animation on hover */
+.profile-tech-icons i:hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: inherit;
+    z-index: -2;
+    animation: pulse 1.5s infinite;
+    opacity: 0.6;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Visibility enhancements */
+.profile-img {
+    position: relative;
+    z-index: 3; /* Ensures profile image stays above icons */
+}
+
+.profile-circle {
+    z-index: 0; /* Circle stays behind everything */
+}
+
+/* Subtle hover effect (optional) */
+.profile-tech-icons i:hover {
+    filter: brightness(1.1);
+    transform: translateY(-5px) !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+/* Typing Animation */
+.typing-animation::after {
+    content: "|";
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Social Media Pulse Effect */
+.social-pulse {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-pulse a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.social-pulse a:hover {
+    transform: translateY(-5px);
+    color: white;
+    background: var(--primary-color);
+}
+
+.social-pulse a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    opacity: 0;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Timeline Animation */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timeline-item {
+    padding: 1rem 0;
+    position: relative;
+    width: 50%;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-item.left {
+    left: 0;
+    padding-right: 4rem;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+    padding-left: 4rem;
+}
+
+.timeline-content {
+    position: relative;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.timeline-date {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.timeline-item.left .timeline-icon {
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline-item.right .timeline-icon {
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline-item::before {
+    content: attr(data-year);
+    position: absolute;
+    width: 100px;
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 30px;
+    text-align: center;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.timeline-item.left::before {
+    right: -120px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline-item.right::before {
+    left: -120px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 0;
+    }
+    
+    .timeline-item.left, 
+    .timeline-item.right {
+        left: 0;
+        text-align: left;
+        padding-right: 0;
+    }
+    
+    .timeline-item.left .timeline-icon,
+    .timeline-item.right .timeline-icon {
+        left: 10px;
+        right: auto;
+    }
+    
+    .timeline-item::before {
+        left: 70px !important;
+        right: auto !important;
+        top: 20px !important;
+        transform: none !important;
+    }
+}
+
+/* Skill Bars */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category {
+    background-color: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.skill-bar {
+    margin-bottom: 1.5rem;
+}
+
+.skill-name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.bar {
+    height: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    width: 0;
+    transition: width 1.5s ease;
+}
+
+/* Floating Shapes */
+.floating-shapes {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.shape {
+    position: absolute;
+    opacity: 0.1;
+    animation: float-shapes 15s linear infinite;
+}
+
+.shape.circle {
+    border-radius: 50%;
+    background: var(--primary-color);
+}
+
+.shape.triangle {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid var(--accent-color);
+}
+
+@keyframes float-shapes {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+    }
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

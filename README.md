@@ -6,6 +6,7 @@
 
 ## 🌍 Check the Live Site
 [Click here to visit](https://www.brianmusyoki.site/)
+![image](https://github.com/user-attachments/assets/5d7f81f7-9c53-4cf9-b46f-8365c8135932)
 
 
 ## 🚀 Overview
@@ -59,11 +60,12 @@ This is a personal portfolio project showcasing my life journey, experiences, sk
 - ✅ **Cross-Browser Compatibility**: Works on Chrome, Firefox, Edge, and Safari.
 - ✅ **Accessibility**: Designed for all users, including those with disabilities.
 - ✅ **SEO Optimization**: Enhanced for better search rankings.
+- ❌**Mobile view**:make mobile viewing more easier
 
 ## 🎯 How to Use
 ```bash
 # Clone the repository
-git clone https://github.com/prey801/internet-programming-cat2
+git clone https://github.com/prey801/cat2-int-programming
 
 # Open index.html in your browser
 ```

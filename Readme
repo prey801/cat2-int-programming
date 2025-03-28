@@ -1,0 +1,18 @@
+CAT2/
+├── index.html
+├── childhood.html
+├── education.html
+├── skills.html
+├── future.html
+├── contact.html
+├── css/
+│   ├── styles.css
+│   └── animations.css
+├── js/
+│   ├── main.js
+│   ├── animations.js
+│   └── particles.js
+└── images/
+    ├── profile.jpg
+    ├── childhood1.jpg
+    └── (other images)
